@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="UML Class Diagram" id="0">
+    <mxGraphModel dx="872" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="shape=rectangle;whiteSpace=wrap;rounded=0;" value="Payment&#xa;- transactionId: String&#xa;- payer: Party&#xa;- payee: Party&#xa;- paymentInstruction: String&#xa;- executionDate: String&#xa;- amount: double&#xa;- currency: String&#xa;- creationTimestamp: String" vertex="1">
+          <mxGeometry height="160" width="220" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="shape=rectangle;whiteSpace=wrap;rounded=0;" value="Party&#xa;- name: String&#xa;- bank: String&#xa;- country: String&#xa;- account: String" vertex="1">
+          <mxGeometry height="100" width="200" x="280" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="shape=rectangle;whiteSpace=wrap;rounded=0;" value="FraudResult&#xa;- transactionId: String&#xa;- decision: String&#xa;- message: String" vertex="1">
+          <mxGeometry height="100" width="220" x="520" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="shape=rectangle;whiteSpace=wrap;rounded=0;" value="PaymentValidator&#xa;+ validate(Payment): void" vertex="1">
+          <mxGeometry height="60" width="220" x="20" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="shape=rectangle;whiteSpace=wrap;rounded=0;" value="BlacklistEngine&#xa;+ check(Payment): FraudResult" vertex="1">
+          <mxGeometry height="60" width="220" x="280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="shape=rectangle;whiteSpace=wrap;rounded=0;" value="ValidationProcessor&#xa;+ process(Exchange): void" vertex="1">
+          <mxGeometry height="60" width="220" x="20" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="shape=rectangle;whiteSpace=wrap;rounded=0;" value="BlacklistProcessor&#xa;+ process(Exchange): void" vertex="1">
+          <mxGeometry height="60" width="220" x="280" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="9" edge="1" parent="1" source="2" target="3" value="payer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" source="2" target="3" value="payee">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" source="5" target="2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" source="6" target="2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" source="6" target="4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" source="7" target="5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="8" target="6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" source="8" target="4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
